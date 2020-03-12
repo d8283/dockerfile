@@ -1,0 +1,13 @@
+version: "3"
+services:
+  tomcat:
+    image: d8283/tomcat:v2.0
+    container_name: con_tomcat
+    restart: always
+    ports:
+      - "8080:8080"    
+    networks:
+      - net
+networks:
+  net:
+    driver: bridge

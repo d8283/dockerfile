@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mysql:
+    image: d8283/mysql:v1.0
+    container_name: con_mysql
+    restart: always
+    ports:
+      - "3306:3306"    
+    volumes:
+      - /pub/docker/mysql/etc/my.cnf:/etc/my.cnf
+      - /pub/docker/mysql/data/mysql:/pub/data/mysql
+      - /pub/docker/mysql/data/log:/pub/data/log
+    networks:
+      - test_net
+networks:
+  test_net:
+    external: true
